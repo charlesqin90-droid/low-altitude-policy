@@ -1,0 +1,2323 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>中国低空经济产业政策发展脉络与体系分析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --neutral: #374151;
+            --base-100: #ffffff;
+            --base-200: #f8fafc;
+            --base-300: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--neutral);
+        }
+        
+        .serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        .hero-title {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .toc-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--base-100);
+            border-right: 1px solid var(--base-300);
+            z-index: 50;
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+        
+        .toc-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--base-300);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item:hover {
+            background: var(--base-200);
+            padding-left: 0.5rem;
+        }
+        
+        .toc-item a {
+            color: var(--neutral);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .toc-item a:hover {
+            color: var(--primary);
+        }
+        
+        .section-header {
+            border-left: 4px solid var(--primary);
+            padding-left: 1.5rem;
+            margin: 3rem 0 2rem 0;
+        }
+        
+        .policy-card {
+            background: var(--base-100);
+            border: 1px solid var(--base-300);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .policy-card:hover {
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .star-rating {
+            color: #fbbf24;
+            font-size: 1.125rem;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 1.25rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: var(--base-300);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .citation {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 0.25rem;
+            transition: all 0.2s ease;
+        }
+        
+        .citation:hover {
+            background: var(--secondary);
+            transform: scale(1.05);
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .bento-item {
+            background: var(--base-100);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--base-300);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(59, 130, 246, 0.8) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+        
+        @media (max-width: 1024px) {
+            .toc-sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .toc-sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .container, .container.mx-auto {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .hero-overlay {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+
+            .section-header {
+                padding-left: 1rem;
+            }
+
+            body {
+                overflow-x: hidden;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item::before {
+                left: 0.25rem;
+            }
+
+            .timeline-item::after {
+                left: 0.25rem;
+            }
+
+            .policy-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="bg-slate-50">
+    <!-- Table of Contents Sidebar -->
+    <nav class="toc-sidebar">
+      <div class="mb-6">
+        <h2 class="text-lg font-bold text-gray-800 mb-4">目录导航</h2>
+        <div class="space-y-1">
+          <div class="toc-item">
+            <a href="#hero">封面概览</a>
+          </div>
+          <div class="toc-item">
+            <a href="#development">1. 政策发展脉络</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#concept-budding">1.1 概念萌芽期</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#concept-establishment">1.2 概念确立期</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#strategic-enhancement">1.3 战略强化期</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#scale-development">1.4 规模化发展期</a>
+          </div>
+          <div class="toc-item">
+            <a href="#core-policies">2. 核心政策体系</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#strategic-planning">2.1 战略规划类</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#regulations-standards">2.2 法规标准类</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#industrial-development">2.3 产业发展类</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#supporting-measures">2.4 配套支撑类</a>
+          </div>
+          <div class="toc-item">
+            <a href="#management-system">3. 政策管理体系</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#overall-coordination">3.1 统筹协调层</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#industry-regulation">3.2 行业监管层</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#operation-management">3.3 运行管理层</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#supporting-layer">3.4 配套支撑层</a>
+          </div>
+          <div class="toc-item">
+            <a href="#local-innovation">4. 地方政策创新</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#provincial-layout">4.1 省级政策布局</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#municipal-innovation">4.2 市级政策创新</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#district-parks">4.3 区县/园区层面</a>
+          </div>
+          <div class="toc-item">
+            <a href="#assessment-system">5. 重要程度评估</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#five-star">5.1 五星级政策</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#four-star">5.2 四星级政策</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#three-star">5.3 三星级政策</a>
+          </div>
+          <div class="toc-item">
+            <a href="#future-outlook">6. 未来展望</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#evolution-characteristics">6.1 演进特征</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#policy-forecast">6.2 政策展望</a>
+          </div>
+          <div class="toc-item pl-4">
+            <a href="#innovation-direction">6.3 创新方向</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-blue-600 text-white p-3 rounded-full shadow-lg">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section id="hero" class="container mx-auto px-6 py-8">
+        <div class="hero-overlay">
+          <div class="bento-grid">
+            <div class="bento-item bg-transparent border-none shadow-none text-white">
+              <h1 class="hero-title text-4xl lg:text-5xl font-bold serif mb-4 leading-tight">
+                <em>中国低空经济产业政策</em>
+                <br/>
+                发展脉络与体系分析
+              </h1>
+              <p class="text-xl font-light mb-6 leading-relaxed">
+                从概念萌芽到战略引擎的十五年演进历程
+              </p>
+              <div class="flex items-center space-x-4 text-sm opacity-90">
+                <span class="flex items-center"><i class="fas fa-calendar mr-2"></i>2010-2026年</span>
+                <span class="flex items-center"><i class="fas fa-map mr-2"></i>31省市全覆盖</span>
+                <span class="flex items-center"><i class="fas fa-star mr-2"></i>8项五星级政策</span>
+              </div>
+            </div>
+
+            <div class="bento-item bg-white/10 backdrop-blur-sm border-white/20">
+              <h3 class="text-lg font-semibold mb-3 text-white">核心数据概览</h3>
+              <div class="hero-stats mt-4">
+                <div class="stat-item">
+                  <div class="text-2xl font-bold text-yellow-300">31</div>
+                  <div class="text-sm opacity-90">省份覆盖</div>
+                </div>
+                <div class="stat-item">
+                  <div class="text-2xl font-bold text-yellow-300">15年</div>
+                  <div class="text-sm opacity-90">政策演进</div>
+                </div>
+                <div class="stat-item">
+                  <div class="text-2xl font-bold text-yellow-300">万亿</div>
+                  <div class="text-sm opacity-90">市场规模目标</div>
+                </div>
+                <div class="stat-item">
+                  <div class="text-2xl font-bold text-yellow-300">300+</div>
+                  <div class="text-sm opacity-90">2030年标准数</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Development Timeline Section -->
+      <section id="development" class="container mx-auto px-6 py-8">
+        <div class="section-header">
+          <h2 class="text-3xl font-bold serif text-gray-800 mb-2">1. 政策发展总体脉络与战略演进</h2>
+          <p class="text-gray-600 text-lg">历经15年演进，已形成&#34;国家战略引领、法规标准支撑、多部门协同治理、央地联动推进&#34;的完整体系</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-8">
+          <h3 class="text-xl font-semibold mb-6 text-gray-800">政策发展时间轴</h3>
+          <div class="relative">
+            <div class="timeline-item">
+              <div class="bg-blue-50 rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-blue-800 mb-2">2010年：低空空域改革启动</h4>
+                <p class="text-gray-700 mb-3">国务院、中央军委联合印发《关于深化我国低空空域管理改革的意见》，标志着低空空域从严格管制向分类管理、有序开放的战略转型正式启动。</p>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-info-circle mr-2"></i>
+                  采用&#34;三步走&#34;渐进式路径：试点阶段→推广阶段→深化阶段
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="bg-green-50 rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-green-800 mb-2">2021年：&#34;低空经济&#34;概念入国家规划</h4>
+                <p class="text-gray-700 mb-3">《国家综合立体交通网规划纲要》首次在国家层面正式提出&#34;发展交通运输平台经济、枢纽经济、通道经济、低空经济&#34;。</p>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-star mr-2"></i>
+                  全球首个在国家交通规划中明确提出低空经济的国家
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="bg-purple-50 rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-purple-800 mb-2">2024年：上升为&#34;新增长引擎&#34;</h4>
+                <p class="text-gray-700 mb-3">《政府工作报告》首次将&#34;低空经济&#34;列为&#34;新增长引擎&#34;，国家发改委设立低空经济发展司，党的二十届三中全会明确&#34;发展通用航空和低空经济&#34;。</p>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-building mr-2"></i>
+                  专司统筹机构设立，解决&#34;九龙治水&#34;体制困境
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="bg-orange-50 rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-orange-800 mb-2">2025-2026年：安全健康发展新阶段</h4>
+                <p class="text-gray-700 mb-3">政策重点转向&#34;安全健康发展&#34;与标准化建设，十部门联合发布《低空经济标准体系建设指南》，新修订《民用航空法》增设&#34;发展促进&#34;专章。</p>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-shield-alt mr-2"></i>
+                  从规模扩张向质量效益转变，强调安全底线
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="concept-budding" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">1.1 概念萌芽与空域改革探索期（2010-2020年）</h3>
+
+          <div class="policy-card">
+            <div class="flex items-start justify-between mb-4">
+              <h4 class="text-xl font-semibold text-gray-800">低空空域管理改革启动</h4>
+              <div class="star-rating">★★★★★</div>
+            </div>
+            <div class="bg-blue-50 rounded-lg p-4 mb-4">
+              <p class="font-semibold text-blue-800 mb-2">2010年8月19日</p>
+              <p class="text-gray-700">国务院、中央军委联合印发《关于深化我国低空空域管理改革的意见》<a href="#ref-1" class="citation">[1]</a>
+              </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2">分类划设空域</h5>
+                <p class="text-sm text-gray-600">管制空域、监视空域、报告空域三类差异化管理</p>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2">简化审批程序</h5>
+                <p class="text-sm text-gray-600">从繁琐审批优化为报备制或简化审批制</p>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2">服务保障体系</h5>
+                <p class="text-sm text-gray-600">规划建设飞行服务站、通信导航监视设施</p>
+              </div>
+            </div>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+              <p class="text-sm text-gray-700"><strong>历史意义：</strong>中国低空经济政策发展的历史性起点，标志着低空空域从严格管制向分类管理、有序开放的战略转型正式启动。</p>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <div class="flex items-start justify-between mb-4">
+              <h4 class="text-xl font-semibold text-gray-800">通用航空产业培育</h4>
+              <div class="star-rating">★★★★☆</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="font-semibold mb-2">2016年5月</p>
+                <p class="text-gray-700 mb-3">国务院办公厅印发《关于促进通用航空业发展的指导意见》<a href="#ref-2" class="citation">[2]</a>
+                </p>
+                <p class="text-sm text-gray-600">首次从国家层面系统规划通用航空产业发展</p>
+              </div>
+              <div>
+                <p class="font-semibold mb-2">2017年2月</p>
+                <p class="text-gray-700 mb-3">民航局发布《通用航空发展&#34;十三五&#34;规划》<a href="#ref-3" class="citation">[3]</a>
+                </p>
+                <p class="text-sm text-gray-600">提出2020年通用航空器5000架以上、年飞行量200万小时</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="concept-establishment" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">1.2 概念确立与战略定位期（2021-2023年）</h3>
+
+          <div class="policy-card">
+            <div class="flex items-start justify-between mb-4">
+              <h4 class="text-xl font-semibold text-gray-800">&#34;低空经济&#34;首次纳入国家规划</h4>
+              <div class="star-rating">★★★★★</div>
+            </div>
+            <div class="bg-green-50 rounded-lg p-4 mb-4">
+              <p class="font-semibold text-green-800 mb-2">2021年2月</p>
+              <p class="text-gray-700">《国家综合立体交通网规划纲要》首次提出&#34;发展交通运输平台经济、枢纽经济、通道经济、低空经济&#34;<a href="#ref-4" class="citation">[4]</a>
+              </p>
+            </div>
+            <div class="bg-green-100 rounded-lg p-4">
+              <h5 class="font-semibold mb-3">战略意义</h5>
+              <div class="grid md:grid-cols-3 gap-3">
+                <div class="text-center">
+                  <i class="fas fa-globe text-2xl text-green-600 mb-2"></i>
+                  <p class="text-sm font-semibold">空间维度</p>
+                  <p class="text-xs text-gray-600">纳入综合立体交通网</p>
+                </div>
+                <div class="text-center">
+                  <i class="fas fa-industry text-2xl text-green-600 mb-2"></i>
+                  <p class="text-sm font-semibold">产业维度</p>
+                  <p class="text-xs text-gray-600">新经济形态特征</p>
+                </div>
+                <div class="text-center">
+                  <i class="fas fa-chart-line text-2xl text-green-600 mb-2"></i>
+                  <p class="text-sm font-semibold">发展维度</p>
+                  <p class="text-xs text-gray-600">长期稳定政策预期</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">法规体系初步构建（2023年）</h4>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-3 text-left font-semibold">时间</th>
+                    <th class="px-4 py-3 text-left font-semibold">政策名称</th>
+                    <th class="px-4 py-3 text-left font-semibold">发布部门</th>
+                    <th class="px-4 py-3 text-left font-semibold">核心创新</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr>
+                    <td class="px-4 py-3">2023.06</td>
+                    <td class="px-4 py-3">《无人驾驶航空器飞行管理暂行条例》</td>
+                    <td class="px-4 py-3">国务院、中央军委</td>
+                    <td class="px-4 py-3">分类管理制度；适飞空域报备制</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3">2023.10</td>
+                    <td class="px-4 py-3">《绿色航空制造业发展纲要》</td>
+                    <td class="px-4 py-3">工信部等四部门</td>
+                    <td class="px-4 py-3">eVTOL发展路线图；电动化技术路线</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3">2023.11</td>
+                    <td class="px-4 py-3">《空域管理条例（征求意见稿）》</td>
+                    <td class="px-4 py-3">国家空管委办公室</td>
+                    <td class="px-4 py-3">空域分类管理制度；军民航协调机制</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="strategic-enhancement" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">1.3 战略强化与体系完善期（2024年）</h3>
+
+          <div class="policy-card">
+            <div class="flex items-start justify-between mb-4">
+              <h4 class="text-xl font-semibold text-gray-800">国家战略地位全面确立</h4>
+              <div class="star-rating">★★★★★</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-blue-50 rounded-lg p-4">
+                <p class="font-semibold text-blue-800 mb-2">2024年3月5日</p>
+                <p class="text-gray-700 mb-2">《政府工作报告》首次将&#34;低空经济&#34;列为&#34;新增长引擎&#34;</p>
+                <p class="text-sm text-gray-600">政策支持力度显著增强，成为稳增长、促转型的重要抓手<a href="#ref-5" class="citation">[5]</a>
+                </p>
+              </div>
+              <div class="bg-green-50 rounded-lg p-4">
+                <p class="font-semibold text-green-800 mb-2">2024年7月</p>
+                <p class="text-gray-700 mb-2">党的二十届三中全会《决定》首次明确&#34;发展通用航空和低空经济&#34;</p>
+                <p class="text-sm text-gray-600">融入国家全面深化改革和中国式现代化全局<a href="#ref-6" class="citation">[6]</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-purple-100 rounded-lg p-4 mb-4">
+              <h5 class="font-semibold mb-2">《通用航空装备创新应用实施方案（2024-2030年）》</h5>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold text-purple-800">到2027年</p>
+                  <p class="text-sm text-gray-700">新型通用航空装备在城市空运、物流配送、应急救援等领域实现商业应用</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-purple-800">到2030年</p>
+                  <p class="text-sm text-gray-700">形成<span class="font-bold text-purple-600">万亿级市场规模</span>，建立高端化、智能化、绿色化发展新模式</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <div class="flex items-start justify-between mb-4">
+              <h4 class="text-xl font-semibold text-gray-800">管理体制机制重大创新</h4>
+              <div class="star-rating">★★★★★</div>
+            </div>
+            <div class="bg-orange-50 border-l-4 border-orange-400 p-4 mb-4">
+              <p class="font-semibold text-orange-800 mb-2">2024年底</p>
+              <p class="text-gray-700">国家发展和改革委员会正式设立<span class="font-bold text-orange-600">低空经济发展司</span>
+                <a href="#ref-7" class="citation">[7]</a>
+              </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2">体制创新意义</h5>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 从&#34;九龙治水&#34;到专司统筹</li>
+                  <li>• 解决政策碎片化问题</li>
+                  <li>• 降低协调成本</li>
+                  <li>• 形成发展合力</li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2">核心职能</h5>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 拟订发展战略和规划</li>
+                  <li>• 提出政策建议</li>
+                  <li>• 协调重大问题</li>
+                  <li>• 推动基础设施建设</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="scale-development" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">1.4 规模化发展与生态成型期（2025-2026年）</h3>
+
+          <div class="policy-card">
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">政策体系统筹升级</h4>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-red-50 rounded-lg p-4">
+                <p class="font-semibold text-red-800 mb-2">2025年3月</p>
+                <p class="text-gray-700 mb-2">《政府工作报告》调整为&#34;推动商业航天、低空经济等新兴产业安全健康发展&#34;</p>
+                <p class="text-sm text-gray-600">更加强调&#34;安全健康发展&#34;，注重应用示范和规模化发展<a href="#ref-8" class="citation">[8]</a>
+                </p>
+              </div>
+              <div class="bg-blue-50 rounded-lg p-4">
+                <p class="font-semibold text-blue-800 mb-2">2025年10月</p>
+                <p class="text-gray-700 mb-2">&#34;十五五&#34;规划建议将低空经济纳入&#34;战略性新兴产业集群发展&#34;</p>
+                <p class="text-sm text-gray-600">强调集群化发展、生态化构建、规模化应用<a href="#ref-9" class="citation">[9]</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
+              <h5 class="font-semibold mb-3">《低空经济标准体系建设指南（2025年版）》</h5>
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-blue-600">10</div>
+                  <p class="text-sm text-gray-600">部门联合发布</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-600">2027</div>
+                  <p class="text-sm text-gray-600">年基本建立</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">300+</div>
+                  <p class="text-sm text-gray-600">2030年标准数</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">地方立法与场景落地突破</h4>
+            <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
+              <p class="font-semibold text-green-800 mb-2">2025年2月28日</p>
+              <p class="text-gray-700">《广州市低空经济发展条例》正式施行，全国首部地级市层面的低空经济专项立法<a href="#ref-10" class="citation">[10]</a>
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-yellow-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2">空域管理改革进展</h5>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 6市试点600米以下空域授权</li>
+                  <li>• &#34;负面清单+承诺制&#34;管理模式</li>
+                  <li>• 湖南省线上高效审批</li>
+                  <li>• 四川省6700+平方公里协同管理空域</li>
+                </ul>
+              </div>
+              <div class="bg-blue-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2">2026年法律完善</h5>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 新修订《民用航空法》施行</li>
+                  <li>• 增设&#34;发展促进&#34;专章</li>
+                  <li>• 300米以下低空分类分级管理</li>
+                  <li>• eVTOL精准监管体系建立</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Policies Section -->
+      <section id="core-policies" class="container mx-auto px-6 py-8">
+        <div class="section-header">
+          <h2 class="text-3xl font-bold serif text-gray-800 mb-2">2. 国家层面核心政策体系</h2>
+          <p class="text-gray-600 text-lg">涵盖战略规划、法规制度、产业发展、配套支撑四大类别</p>
+        </div>
+
+        <div id="strategic-planning" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">2.1 战略规划与顶层设计类政策</h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-lg shadow-lg border border-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-4 text-left font-semibold">时间</th>
+                  <th class="px-6 py-4 text-left font-semibold">政策名称</th>
+                  <th class="px-6 py-4 text-left font-semibold">发布部门</th>
+                  <th class="px-6 py-4 text-left font-semibold">核心内容</th>
+                  <th class="px-6 py-4 text-left font-semibold">重要程度</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 font-medium">2021.02</td>
+                  <td class="px-6 py-4">《国家综合立体交通网规划纲要》</td>
+                  <td class="px-6 py-4">中共中央、国务院</td>
+                  <td class="px-6 py-4">首次提出&#34;低空经济&#34;概念</td>
+                  <td class="px-6 py-4 star-rating">★★★★★</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 font-medium">2023.12</td>
+                  <td class="px-6 py-4">中央经济工作会议</td>
+                  <td class="px-6 py-4">中共中央</td>
+                  <td class="px-6 py-4">确立低空经济为战略性新兴产业</td>
+                  <td class="px-6 py-4 star-rating">★★★★★</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 font-medium">2024.03</td>
+                  <td class="px-6 py-4">《2024年政府工作报告》</td>
+                  <td class="px-6 py-4">国务院</td>
+                  <td class="px-6 py-4">首次列为&#34;新增长引擎&#34;</td>
+                  <td class="px-6 py-4 star-rating">★★★★★</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 font-medium">2024.07</td>
+                  <td class="px-6 py-4">二十届三中全会《决定》</td>
+                  <td class="px-6 py-4">中共中央</td>
+                  <td class="px-6 py-4">中央全会首次明确&#34;发展低空经济&#34;</td>
+                  <td class="px-6 py-4 star-rating">★★★★★</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 font-medium">2025.03</td>
+                  <td class="px-6 py-4">《2025年政府工作报告》</td>
+                  <td class="px-6 py-4">国务院</td>
+                  <td class="px-6 py-4">强调&#34;安全健康发展&#34;</td>
+                  <td class="px-6 py-4 star-rating">★★★★★</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="regulations-standards" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">2.2 法规制度与标准建设类政策</h3>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="policy-card">
+              <div class="flex items-start justify-between mb-4">
+                <h4 class="text-lg font-semibold text-gray-800">《无人驾驶航空器飞行管理暂行条例》</h4>
+                <div class="star-rating">★★★★★</div>
+              </div>
+              <div class="bg-blue-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-blue-800">2023年6月</p>
+                <p class="text-sm text-gray-600">国务院、中央军委发布<a href="#ref-11" class="citation">[11]</a>
+                </p>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-star text-yellow-500 mr-2"></i>
+                  <span>我国首部无人机行政法规</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-layer-group text-blue-500 mr-2"></i>
+                  <span>分类管理制度：五类差异化监管</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-file-alt text-green-500 mr-2"></i>
+                  <span>适飞空域报备制简化审批</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-start justify-between mb-4">
+                <h4 class="text-lg font-semibold text-gray-800">《低空经济标准体系建设指南》</h4>
+                <div class="star-rating">★★★★★</div>
+              </div>
+              <div class="bg-purple-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-purple-800">2025年12月</p>
+                <p class="text-sm text-gray-600">市场监管总局等十部门<a href="#ref-12" class="citation">[12]</a>
+                </p>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-users text-purple-500 mr-2"></i>
+                  <span>十部门协同推进</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-target text-orange-500 mr-2"></i>
+                  <span>2027年基本建立，2030年超300项</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-globe text-blue-500 mr-2"></i>
+                  <span>国际兼容的标准体系</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="industrial-development" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">2.3 产业发展与技术应用类政策</h3>
+
+          <div class="policy-card">
+            <div class="flex items-start justify-between mb-4">
+              <h4 class="text-xl font-semibold text-gray-800">《通用航空装备创新应用实施方案（2024-2030年）》</h4>
+              <div class="star-rating">★★★★★</div>
+            </div>
+            <div class="bg-gradient-to-r from-blue-100 to-green-100 rounded-lg p-6 mb-4">
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-blue-600 mb-2">万亿级</div>
+                  <p class="text-sm text-gray-700">市场规模目标</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600 mb-2">无人化</div>
+                  <p class="text-sm text-gray-700">电动化智能化</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-purple-600 mb-2">三场景</div>
+                  <p class="text-sm text-gray-700">城市空运物流应急</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-sm text-gray-600">
+              <p>工信部、科技部、财政部、民航局联合发布<a href="#ref-13" class="citation">[13]</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="supporting-measures" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">2.4 配套支撑与要素保障类政策</h3>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold mb-3">频谱管理</h4>
+              <div class="bg-blue-50 rounded-lg p-3">
+                <p class="font-semibold text-blue-800 text-sm">2023年12月</p>
+                <p class="text-xs text-gray-600">《民用无人驾驶航空器无线电管理暂行办法》</p>
+              </div>
+              <p class="text-sm text-gray-600 mt-2">无人机无线电频谱科学配置<a href="#ref-14" class="citation">[14]</a>
+              </p>
+            </div>
+
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold mb-3">生产监管</h4>
+              <div class="bg-green-50 rounded-lg p-3">
+                <p class="font-semibold text-green-800 text-sm">2023年12月</p>
+                <p class="text-xs text-gray-600">《民用无人驾驶航空器生产管理若干规定》</p>
+              </div>
+              <p class="text-sm text-gray-600 mt-2">生产环节质量监管、唯一产品识别码<a href="#ref-15" class="citation">[15]</a>
+              </p>
+            </div>
+
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold mb-3">财税金融</h4>
+              <div class="bg-yellow-50 rounded-lg p-3">
+                <p class="font-semibold text-yellow-800 text-sm">2024年12月</p>
+                <p class="text-xs text-gray-600">专项债券支持政策</p>
+              </div>
+              <p class="text-sm text-gray-600 mt-2">低空经济基础设施纳入专项债券支持<a href="#ref-16" class="citation">[16]</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Management System Section -->
+      <section id="management-system" class="container mx-auto px-6 py-8">
+        <div class="section-header">
+          <h2 class="text-3xl font-bold serif text-gray-800 mb-2">3. 政策管理体系与分管部门职能</h2>
+          <p class="text-gray-600 text-lg">&#34;统筹协调—行业监管—运行管理—配套支撑—军地协同&#34;的多层次架构</p>
+        </div>
+
+        <div id="overall-coordination" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">3.1 统筹协调层</h3>
+
+          <div class="policy-card">
+            <div class="flex items-start justify-between mb-4">
+              <h4 class="text-xl font-semibold text-gray-800">国家发展和改革委员会低空经济发展司</h4>
+              <div class="star-rating">★★★★★</div>
+            </div>
+            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+              <p class="font-semibold text-red-800">2024年底设立，低空经济政策管理的核心枢纽</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-4">
+              <div>
+                <h5 class="font-semibold mb-3">核心职能</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    <span>拟订并组织实施低空经济发展战略、中长期发展规划</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    <span>提出有关政策建议</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                    <span>协调有关重大问题</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-semibold mb-3">体制创新意义</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex items-start">
+                    <i class="fas fa-arrow-right text-blue-500 mr-2 mt-1"></i>
+                    <span>从&#34;九龙治水&#34;到专司统筹</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-arrow-right text-blue-500 mr-2 mt-1"></i>
+                    <span>解决政策碎片化问题</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-arrow-right text-blue-500 mr-2 mt-1"></i>
+                    <span>提供组织保障</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+              <p class="text-sm text-gray-700"><strong>2025年工作进展：</strong>组织召开推动低空经济发展工作会议、推动低空经济安全健康发展专题会议、推进低空经济高质量发展专题培训等重要会议<a href="#ref-17" class="citation">[17]</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">国家空中交通管理委员会</h4>
+            <div class="bg-blue-50 rounded-lg p-4 mb-4">
+              <p class="font-semibold text-blue-800 mb-2">国家空域管理的最高协调机构</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2 text-sm">顶层设计</h5>
+                <p class="text-xs text-gray-600">制定国家空域改革战略</p>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2 text-sm">改革试点</h5>
+                <p class="text-xs text-gray-600">审批低空空域试点方案</p>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h5 class="font-semibold mb-2 text-sm">军地协调</h5>
+                <p class="text-xs text-gray-600">协调军民航空域使用</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="industry-regulation" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">3.2 行业监管层</h3>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold text-gray-800 mb-4">中国民用航空局（CAAC）</h4>
+              <div class="bg-blue-50 rounded-lg p-3 mb-4">
+                <p class="font-semibold text-blue-800 text-sm">全链条监管职能</p>
+              </div>
+
+              <div class="space-y-3">
+                <div class="flex items-start">
+                  <i class="fas fa-certificate text-blue-500 mr-3 mt-1"></i>
+                  <div>
+                    <p class="font-semibold text-sm">适航审定</p>
+                    <p class="text-xs text-gray-600">无人机、eVTOL等航空器设计、生产、维修适航认证</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-plane text-green-500 mr-3 mt-1"></i>
+                  <div>
+                    <p class="font-semibold text-sm">运行监管</p>
+                    <p class="text-xs text-gray-600">飞行活动管理、空中交通管制、应急处置</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-user-graduate text-purple-500 mr-3 mt-1"></i>
+                  <div>
+                    <p class="font-semibold text-sm">人员资质</p>
+                    <p class="text-xs text-gray-600">无人机操控员执照管理、培训机构监管</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-green-50 rounded-lg p-3 mt-4">
+                <p class="text-xs text-gray-700"><strong>重要突破：</strong>亿航EH216-S获得全球首个载人eVTOL运营合格证<a href="#ref-18" class="citation">[18]</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold text-gray-800 mb-4">工业和信息化部</h4>
+              <div class="bg-green-50 rounded-lg p-3 mb-4">
+                <p class="font-semibold text-green-800 text-sm">装备制造与技术标准</p>
+              </div>
+
+              <div class="space-y-3">
+                <div class="flex items-start">
+                  <i class="fas fa-industry text-orange-500 mr-3 mt-1"></i>
+                  <div>
+                    <p class="font-semibold text-sm">产业规划</p>
+                    <p class="text-xs text-gray-600">航空制造业发展规划、技术路线制定</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-cogs text-blue-500 mr-3 mt-1"></i>
+                  <div>
+                    <p class="font-semibold text-sm">技术标准</p>
+                    <p class="text-xs text-gray-600">&#34;5G+低空智联&#34;技术标准、低空CNS设备认证</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-broadcast-tower text-purple-500 mr-3 mt-1"></i>
+                  <div>
+                    <p class="font-semibold text-sm">频谱管理</p>
+                    <p class="text-xs text-gray-600">无人机无线电频谱分配与管理</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-blue-50 rounded-lg p-3 mt-4">
+                <p class="text-xs text-gray-700"><strong>技术路线：</strong>&#34;无人化、电动化、智能化&#34;，契合全球绿色低碳转型趋势<a href="#ref-19" class="citation">[19]</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="operation-management" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">3.3 运行管理层与军地协同机制</h3>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold text-gray-800 mb-4">空管局（ATMB）</h4>
+              <div class="bg-blue-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-blue-800 text-sm">空域管理执行机构</p>
+              </div>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li>• 实时空域动态调整</li>
+                <li>• 有人/无人航空器融合运行监控</li>
+                <li>• 低空飞行服务系统建设运营</li>
+              </ul>
+              <div class="bg-green-50 rounded-lg p-2 mt-3">
+                <p class="text-xs text-gray-700"><strong>2025年目标：</strong>0.5秒级空域动态调整响应能力</p>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold text-gray-800 mb-4">军方空管部门</h4>
+              <div class="bg-red-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-red-800 text-sm">国防安全相关空域管理</p>
+              </div>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li>• 国防安全相关空域管理</li>
+                <li>• 军民合用空域协调</li>
+                <li>• 敏感区域管控</li>
+              </ul>
+              <div class="bg-yellow-50 rounded-lg p-2 mt-3">
+                <p class="text-xs text-gray-700">确保国防安全前提下，推动军事空域灵活释放</p>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold text-gray-800 mb-4">低空空域协同管理运行中心</h4>
+              <div class="bg-purple-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-purple-800 text-sm">军地民三方协同管理创新</p>
+              </div>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li>• &#34;三合一&#34;简化为&#34;一环节&#34;</li>
+                <li>• 飞行计划报备&#34;一站式&#34;服务</li>
+                <li>• 湖南、江西、安徽等试点</li>
+              </ul>
+              <div class="bg-green-50 rounded-lg p-2 mt-3">
+                <p class="text-xs text-gray-700">湖南省实现通航飞行计划线上高效审批</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="supporting-layer" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">3.4 配套支撑层</h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-lg shadow-lg border border-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-3 text-left font-semibold">部门</th>
+                  <th class="px-4 py-3 text-left font-semibold">核心职能</th>
+                  <th class="px-4 py-3 text-left font-semibold">关键政策/工作</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium">市场监管总局</td>
+                  <td class="px-4 py-3 text-sm">标准体系建设、质量监管</td>
+                  <td class="px-4 py-3 text-sm">《低空经济标准体系建设指南》牵头<a href="#ref-20" class="citation">[20]</a>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium">科技部</td>
+                  <td class="px-4 py-3 text-sm">技术创新、研发攻关</td>
+                  <td class="px-4 py-3 text-sm">通用航空装备创新应用科技支撑</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium">财政部</td>
+                  <td class="px-4 py-3 text-sm">财税支持、资金保障</td>
+                  <td class="px-4 py-3 text-sm">装备创新应用资金配套</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium">自然资源部</td>
+                  <td class="px-4 py-3 text-sm">地理信息、遥感数据</td>
+                  <td class="px-4 py-3 text-sm">低空高光谱遥感数据获取技术规范</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium">中国气象局</td>
+                  <td class="px-4 py-3 text-sm">低空气象服务、航空气象保障</td>
+                  <td class="px-4 py-3 text-sm">城市智慧气象服务；500米级预报</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Local Innovation Section -->
+      <section id="local-innovation" class="container mx-auto px-6 py-8">
+        <div class="section-header">
+          <h2 class="text-3xl font-bold serif text-gray-800 mb-2">4. 地方层面政策创新与实践</h2>
+          <p class="text-gray-600 text-lg">31个省市全覆盖，形成梯次发展格局</p>
+        </div>
+
+        <div id="provincial-layout" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">4.1 省级政策布局（31省市全覆盖）</h3>
+
+          <div class="mb-8">
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">领先型省份</h4>
+            <div class="overflow-x-auto">
+              <table class="w-full bg-white rounded-lg shadow-lg border border-gray-200">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-3 text-left font-semibold">省份/城市</th>
+                    <th class="px-4 py-3 text-left font-semibold">核心战略定位</th>
+                    <th class="px-4 py-3 text-left font-semibold">关键目标/成果</th>
+                    <th class="px-4 py-3 text-left font-semibold">特色创新</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">广东</td>
+                    <td class="px-4 py-3 text-sm">&#34;低空+海洋&#34;融合、跨境低空物流</td>
+                    <td class="px-4 py-3 text-sm">2026年规模超3000亿元，开通粤港澳跨境航线<a href="#ref-21" class="citation">[21]</a>
+                    </td>
+                    <td class="px-4 py-3 text-sm">海洋融合；跨境应用；深圳全球&#34;无人机之都&#34;</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">北京</td>
+                    <td class="px-4 py-3 text-sm">&#34;空天技术+人工智能&#34;创新高地</td>
+                    <td class="px-4 py-3 text-sm">2026年航天航空产业规模达千亿</td>
+                    <td class="px-4 py-3 text-sm">科技创新资源最密集；中关村延庆试验区</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">上海</td>
+                    <td class="px-4 py-3 text-sm">&#34;世界eVTOL之都&#34;、长三角互通</td>
+                    <td class="px-4 py-3 text-sm">2028年核心产业规模800亿元<a href="#ref-22" class="citation">[22]</a>
+                    </td>
+                    <td class="px-4 py-3 text-sm">eVTOL研发制造领先；长三角协同</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">安徽</td>
+                    <td class="px-4 py-3 text-sm">物流与文旅双轮驱动</td>
+                    <td class="px-4 py-3 text-sm">2027年低空物流覆盖80%人口岗位</td>
+                    <td class="px-4 py-3 text-sm">场景驱动；邮政物流网络</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold mb-3">重庆</h4>
+              <p class="text-sm text-gray-600 mb-2">航空制造产业集群</p>
+              <div class="bg-blue-50 rounded-lg p-2">
+                <p class="text-xs text-gray-700">2030年产值突破500亿元<a href="#ref-23" class="citation">[23]</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold mb-3">浙江</h4>
+              <p class="text-sm text-gray-600 mb-2">低空物流、城市治理</p>
+              <div class="bg-green-50 rounded-lg p-2">
+                <p class="text-xs text-gray-700">平台经济+低空经济融合</p>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <h4 class="text-lg font-semibold mb-3">海南</h4>
+              <p class="text-sm text-gray-600 mb-2">&#34;低空+旅游&#34;、跨境应用</p>
+              <div class="bg-yellow-50 rounded-lg p-2">
+                <p class="text-xs text-gray-700">低空经济总产值超200亿元目标</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="municipal-innovation" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">4.2 市级政策创新（重点城市）</h3>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="policy-card">
+              <div class="flex items-start justify-between mb-4">
+                <h4 class="text-lg font-semibold text-gray-800">深圳：全球低空经济标杆</h4>
+                <div class="star-rating">★★★★★</div>
+              </div>
+              <div class="bg-blue-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-blue-800">2024年2月1日</p>
+                <p class="text-sm text-gray-600">《深圳经济特区低空经济产业促进条例》施行<a href="#ref-24" class="citation">[24]</a>
+                </p>
+              </div>
+              <div class="space-y-2 mb-3">
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-trophy text-yellow-500 mr-2"></i>
+                  <span>全球首个eVTOL智能机坪</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-building text-blue-500 mr-2"></i>
+                  <span>企业数量和融资规模全国领先</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-th-large text-green-500 mr-2"></i>
+                  <span>43个低空经济应用场景</span>
+                </div>
+              </div>
+              <div class="bg-yellow-50 rounded-lg p-2">
+                <p class="text-xs text-gray-700">2025年低空经济产值规模突破900亿元</p>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-start justify-between mb-4">
+                <h4 class="text-lg font-semibold text-gray-800">广州：地方立法首创</h4>
+                <div class="star-rating">★★★★★</div>
+              </div>
+              <div class="bg-green-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-green-800">2025年2月28日</p>
+                <p class="text-sm text-gray-600">《广州市低空经济发展条例》施行<a href="#ref-25" class="citation">[25]</a>
+                </p>
+              </div>
+              <div class="space-y-2 mb-3">
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-map text-blue-500 mr-2"></i>
+                  <span>空域分类划设向社会公示</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-server text-green-500 mr-2"></i>
+                  <span>飞行服务站&#34;一站式&#34;服务</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <i class="fas fa-industry text-purple-500 mr-2"></i>
+                  <span>产业集聚发展支持</span>
+                </div>
+              </div>
+              <div class="bg-purple-50 rounded-lg p-2">
+                <p class="text-xs text-gray-700">为其他地方立法提供重要参考</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="district-parks" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">4.3 区县/园区层面（产业载体）</h3>
+
+          <div class="policy-card">
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">广东新丰县低空经济片区：融资模式创新</h4>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
+                  <p class="font-semibold text-green-800 mb-2">全国首个以低空经济领域成功申报专项债项目获得资金的县</p>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center">
+                    <i class="fas fa-chart-pie text-blue-500 mr-3"></i>
+                    <div>
+                      <p class="font-semibold text-sm">组合融资模式</p>
+                      <p class="text-xs text-gray-600">财政统筹25% + 专项债券75%</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-coins text-yellow-500 mr-3"></i>
+                    <div>
+                      <p class="font-semibold text-sm">多渠道收入</p>
+                      <p class="text-xs text-gray-600">测试费、培训费、出租收入、旅游收入</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bg-blue-50 rounded-lg p-4 mb-4">
+                  <h5 class="font-semibold mb-3">收入来源</h5>
+                  <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div class="flex items-center">
+                      <i class="fas fa-vial text-blue-500 mr-2"></i>
+                      <span>测试费用</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-graduation-cap text-green-500 mr-2"></i>
+                      <span>培训费用</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-home text-purple-500 mr-2"></i>
+                      <span>出租收入</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-plane text-orange-500 mr-2"></i>
+                      <span>旅游收入</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-3">
+                  <p class="text-sm text-gray-700"><strong>示范意义：</strong>为欠发达地区发展低空经济提供可复制的基础设施投融资方案<a href="#ref-26" class="citation">[26]</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Assessment System Section -->
+      <section id="assessment-system" class="container mx-auto px-6 py-8">
+        <div class="section-header">
+          <h2 class="text-3xl font-bold serif text-gray-800 mb-2">5. 政策重要程度评估体系</h2>
+          <p class="text-gray-600 text-lg">基于政策层级、实际影响、创新性、示范意义的综合评估</p>
+        </div>
+
+        <div id="five-star" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">5.1 五星级政策（★★★★★）：战略奠基与体系重构</h3>
+
+          <div class="policy-card">
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-3 text-left font-semibold">时间</th>
+                    <th class="px-4 py-3 text-left font-semibold">政策名称</th>
+                    <th class="px-4 py-3 text-left font-semibold">核心贡献</th>
+                    <th class="px-4 py-3 text-left font-semibold">关键创新</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">2021.02</td>
+                    <td class="px-4 py-3">《国家综合立体交通网规划纲要》</td>
+                    <td class="px-4 py-3 text-sm">&#34;低空经济&#34;概念首创</td>
+                    <td class="px-4 py-3 text-sm">全球首个在国家交通规划中明确提出</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">2023.12</td>
+                    <td class="px-4 py-3">中央经济工作会议</td>
+                    <td class="px-4 py-3 text-sm">战略性新兴产业地位确立</td>
+                    <td class="px-4 py-3 text-sm">与生物制造、商业航天并列</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">2024.03</td>
+                    <td class="px-4 py-3">《2024年政府工作报告》</td>
+                    <td class="px-4 py-3 text-sm">&#34;新增长引擎&#34;定位</td>
+                    <td class="px-4 py-3 text-sm">从&#34;发展&#34;到&#34;打造新增长引擎&#34;</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">2024.07</td>
+                    <td class="px-4 py-3">二十届三中全会《决定》</td>
+                    <td class="px-4 py-3 text-sm">中央全会首次明确</td>
+                    <td class="px-4 py-3 text-sm">融入全面深化改革全局</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">2024.12</td>
+                    <td class="px-4 py-3">设立低空经济发展司</td>
+                    <td class="px-4 py-3 text-sm">体制机制创新</td>
+                    <td class="px-4 py-3 text-sm">从&#34;九龙治水&#34;到专司统筹</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">2025.12</td>
+                    <td class="px-4 py-3">《低空经济标准体系建设指南》</td>
+                    <td class="px-4 py-3 text-sm">全国&#34;一盘棋&#34;标准化</td>
+                    <td class="px-4 py-3 text-sm">十部门协同；&#34;四维融合&#34;体系</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 font-medium">2026.07</td>
+                    <td class="px-4 py-3">新修订《民用航空法》</td>
+                    <td class="px-4 py-3 text-sm">法律层级保障</td>
+                    <td class="px-4 py-3 text-sm">最高层级法治保障</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+              <p class="text-sm text-gray-700"><strong>评估标准：</strong>政策层级为中共中央、国务院或国家级战略规划；实际影响为定义产业方向、确立战略地位、构建制度框架；创新性为概念首创、体制突破、模式创新；示范意义为全国推广、长期效应、国际影响。</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="four-star" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">5.2 四星级政策（★★★★☆）：法规完善与产业推动</h3>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="policy-card">
+              <div class="flex items-start justify-between mb-3">
+                <h4 class="text-lg font-semibold text-gray-800">《无人驾驶航空器飞行管理暂行条例》</h4>
+                <div class="star-rating">★★★★☆</div>
+              </div>
+              <div class="bg-blue-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-blue-800 text-sm">2023年6月</p>
+              </div>
+              <p class="text-sm text-gray-700 mb-2">首部行政法规：分类管理、适飞空域报备制，填补无人机管理法治空白</p>
+              <div class="flex items-center text-xs text-gray-600">
+                <i class="fas fa-book text-blue-500 mr-2"></i>
+                <span>法规完善类</span>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-start justify-between mb-3">
+                <h4 class="text-lg font-semibold text-gray-800">《绿色航空制造业发展纲要》</h4>
+                <div class="star-rating">★★★★☆</div>
+              </div>
+              <div class="bg-green-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-green-800 text-sm">2023年10月</p>
+              </div>
+              <p class="text-sm text-gray-700 mb-2">技术路线图：eVTOL发展路径明确，电动化、智能化方向确立</p>
+              <div class="flex items-center text-xs text-gray-600">
+                <i class="fas fa-route text-green-500 mr-2"></i>
+                <span>产业发展类</span>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-start justify-between mb-3">
+                <h4 class="text-lg font-semibold text-gray-800">《国家空域基础分类方法》</h4>
+                <div class="star-rating">★★★★☆</div>
+              </div>
+              <div class="bg-purple-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-purple-800 text-sm">2024年1月</p>
+              </div>
+              <p class="text-sm text-gray-700 mb-2">空域释放突破：G类（300米以下）、W类（120米以下）非管制区域首次划分</p>
+              <div class="flex items-center text-xs text-gray-600">
+                <i class="fas fa-map text-purple-500 mr-2"></i>
+                <span>空域管理类</span>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-start justify-between mb-3">
+                <h4 class="text-lg font-semibold text-gray-800">《广州市低空经济发展条例》</h4>
+                <div class="star-rating">★★★★☆</div>
+              </div>
+              <div class="bg-orange-50 rounded-lg p-3 mb-3">
+                <p class="font-semibold text-orange-800 text-sm">2025年2月</p>
+              </div>
+              <p class="text-sm text-gray-700 mb-2">地方立法首创：全国首部地级市专项立法，为地方立法提供样本</p>
+              <div class="flex items-center text-xs text-gray-600">
+                <i class="fas fa-balance-scale text-orange-500 mr-2"></i>
+                <span>地方创新类</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="three-star" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">5.3 三星级政策（★★★☆☆）：配套支撑与场景拓展</h3>
+
+          <div class="grid md:grid-cols-4 gap-4">
+            <div class="policy-card">
+              <h4 class="text-sm font-semibold mb-2">频谱管理</h4>
+              <p class="text-xs text-gray-600">无线电频谱科学配置</p>
+            </div>
+            <div class="policy-card">
+              <h4 class="text-sm font-semibold mb-2">生产监管</h4>
+              <p class="text-xs text-gray-600">生产环节质量监管</p>
+            </div>
+            <div class="policy-card">
+              <h4 class="text-sm font-semibold mb-2">数据服务</h4>
+              <p class="text-xs text-gray-600">遥感数据标准化获取</p>
+            </div>
+            <div class="policy-card">
+              <h4 class="text-sm font-semibold mb-2">气象保障</h4>
+              <p class="text-xs text-gray-600">500米级低空气象预报</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Outlook Section -->
+      <section id="future-outlook" class="container mx-auto px-6 py-8">
+        <div class="section-header">
+          <h2 class="text-3xl font-bold serif text-gray-800 mb-2">6. 政策演进趋势与未来展望</h2>
+          <p class="text-gray-600 text-lg">从概念导入到战略落地的递进升级</p>
+        </div>
+
+        <div id="evolution-characteristics" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">6.1 政策体系演进特征</h3>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-chart-line text-2xl text-blue-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">从&#34;概念导入&#34;到&#34;战略落地&#34;</h4>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center text-sm">
+                  <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                  <span>2021年：概念提出</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                  <span>2023年：战略确立</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
+                  <span>2024年：引擎定位</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <div class="w-3 h-3 bg-orange-500 rounded-full mr-2"></div>
+                  <span>2025年：安全发展</span>
+                </div>
+                <div class="flex items-center text-sm">
+                  <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                  <span>2026年：集群发展</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-users text-2xl text-green-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">从&#34;部门分割&#34;到&#34;协同治理&#34;</h4>
+              </div>
+              <div class="space-y-2 text-sm text-gray-600">
+                <div class="flex items-start">
+                  <i class="fas fa-arrow-right text-blue-500 mr-2 mt-1"></i>
+                  <span>单一部门管理→多部门协调</span>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-arrow-right text-green-500 mr-2 mt-1"></i>
+                  <span>专门机构统筹</span>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-arrow-right text-purple-500 mr-2 mt-1"></i>
+                  <span>军地民协同机制</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-cogs text-2xl text-purple-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">从&#34;试点探索&#34;到&#34;标准引领&#34;</h4>
+              </div>
+              <div class="space-y-2 text-sm text-gray-600">
+                <div class="flex items-start">
+                  <i class="fas fa-map-marked-alt text-blue-500 mr-2 mt-1"></i>
+                  <span>地方先行先试→经验推广</span>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-clipboard-list text-green-500 mr-2 mt-1"></i>
+                  <span>国家标准体系构建</span>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-globe-americas text-purple-500 mr-2 mt-1"></i>
+                  <span>国际标准兼容对接</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="policy-forecast" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">6.2 2026-2030年政策展望</h3>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-balance-scale text-2xl text-blue-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">立法层面</h4>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-blue-50 rounded-lg p-3">
+                  <p class="font-semibold text-blue-800 text-sm">《民用航空法》修订实施（2026年7月）</p>
+                  <p class="text-xs text-gray-600">首次从法律层面确立低空经济发展促进制度</p>
+                </div>
+                <div class="bg-green-50 rounded-lg p-3">
+                  <p class="font-semibold text-green-800 text-sm">《空域管理条例》正式出台</p>
+                  <p class="text-xs text-gray-600">顶层法规落地，空域分类管理法制化</p>
+                </div>
+                <div class="bg-purple-50 rounded-lg p-3">
+                  <p class="font-semibold text-purple-800 text-sm">地方立法扩容</p>
+                  <p class="text-xs text-gray-600">多层次法律体系完善</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-map text-2xl text-green-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">规划层面</h4>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-orange-50 rounded-lg p-3">
+                  <p class="font-semibold text-orange-800 text-sm">&#34;十五五&#34;低空经济专项规划</p>
+                  <p class="text-xs text-gray-600">明确2026-2030年发展目标</p>
+                </div>
+                <div class="bg-red-50 rounded-lg p-3">
+                  <p class="font-semibold text-red-800 text-sm">区域协同发展规划</p>
+                  <p class="text-xs text-gray-600">长三角、粤港澳大湾区一体化低空网络</p>
+                </div>
+                <div class="bg-cyan-50 rounded-lg p-3">
+                  <p class="font-semibold text-cyan-800 text-sm">国际合作机制</p>
+                  <p class="text-xs text-gray-600">参与国际标准制定</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-clipboard-check text-2xl text-purple-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">标准层面</h4>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-yellow-50 rounded-lg p-3">
+                  <p class="font-semibold text-yellow-800 text-sm">2027年目标</p>
+                  <p class="text-xs text-gray-600">低空经济标准体系基本建立</p>
+                </div>
+                <div class="bg-indigo-50 rounded-lg p-3">
+                  <p class="font-semibold text-indigo-800 text-sm">2030年目标</p>
+                  <p class="text-xs text-gray-600">标准数量超过300项，国际兼容</p>
+                </div>
+                <div class="bg-pink-50 rounded-lg p-3">
+                  <p class="font-semibold text-pink-800 text-sm">重点领域</p>
+                  <p class="text-xs text-gray-600">全链条覆盖，技术与管理融合</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="innovation-direction" class="mb-12">
+          <h3 class="text-2xl font-bold serif text-gray-800 mb-6">6.3 政策创新方向</h3>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-layer-group text-2xl text-blue-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">空域管理改革深化</h4>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-blue-50 rounded-lg p-3">
+                  <p class="font-semibold text-blue-800 text-sm">动态空域管理</p>
+                  <p class="text-xs text-gray-600">根据实时需求灵活调整空域属性</p>
+                </div>
+                <div class="bg-green-50 rounded-lg p-3">
+                  <p class="font-semibold text-green-800 text-sm">弹性化空域配置</p>
+                  <p class="text-xs text-gray-600">军民航协同的动态释放机制</p>
+                </div>
+                <div class="bg-purple-50 rounded-lg p-3">
+                  <p class="font-semibold text-purple-800 text-sm">城市空中交通规则</p>
+                  <p class="text-xs text-gray-600">适应城市复杂环境的运行标准</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-rocket text-2xl text-green-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">场景应用拓展</h4>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-orange-50 rounded-lg p-3">
+                  <p class="font-semibold text-orange-800 text-sm">&#34;低空+&#34;模式深化</p>
+                  <p class="text-xs text-gray-600">物流、文旅、应急、农业等场景规模化</p>
+                </div>
+                <div class="bg-red-50 rounded-lg p-3">
+                  <p class="font-semibold text-red-800 text-sm">城市空中出租车商业化</p>
+                  <p class="text-xs text-gray-600">eVTOL载人飞行从试点走向商业运营</p>
+                </div>
+                <div class="bg-cyan-50 rounded-lg p-3">
+                  <p class="font-semibold text-cyan-800 text-sm">低空数字经济融合</p>
+                  <p class="text-xs text-gray-600">与5G-A、AI、数字孪生等技术深度融合</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="policy-card">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-shield-alt text-2xl text-red-500 mr-3"></i>
+                <h4 class="text-lg font-semibold">安全保障强化</h4>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-yellow-50 rounded-lg p-3">
+                  <p class="font-semibold text-yellow-800 text-sm">全域通信覆盖</p>
+                  <p class="text-xs text-gray-600">低空智联网基础设施建设</p>
+                </div>
+                <div class="bg-indigo-50 rounded-lg p-3">
+                  <p class="font-semibold text-indigo-800 text-sm">反无人机系统</p>
+                  <p class="text-xs text-gray-600">应对&#34;黑飞&#34;、网络攻击等威胁</p>
+                </div>
+                <div class="bg-pink-50 rounded-lg p-3">
+                  <p class="font-semibold text-pink-800 text-sm">保险与责任体系</p>
+                  <p class="text-xs text-gray-600">建立无人机&#34;交强险&#34;等强制保险制度</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- References Section -->
+      <section class="container mx-auto px-6 py-8 bg-gray-50 rounded-xl mb-8">
+        <h3 class="text-xl font-bold serif text-gray-800 mb-6">参考文献</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div id="ref-1" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[1]</p>
+            <a href="https://www.gov.cn/zhengce/content/2010-11/14/content_5028.htm" class="text-blue-600 hover:text-blue-800" target="_blank">国务院关于深化我国低空空域管理改革的意见</a>
+          </div>
+          <div id="ref-2" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[2]</p>
+            <a href="https://www.gov.cn/zhengce/content/2016-05/17/content_5075097.htm" class="text-blue-600 hover:text-blue-800" target="_blank">国务院办公厅关于促进通用航空业发展的指导意见</a>
+          </div>
+          <div id="ref-3" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[3]</p>
+            <a href="http://www.caac.gov.cn/XXGK/XXGK/ZFGW/201702/t20170215_39667.html" class="text-blue-600 hover:text-blue-800" target="_blank">通用航空发展&#34;十三五&#34;规划</a>
+          </div>
+          <div id="ref-4" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[4]</p>
+            <a href="https://www.gov.cn/zhengce/content/2021-02/24/content_5588654.htm" class="text-blue-600 hover:text-blue-800" target="_blank">国家综合立体交通网规划纲要</a>
+          </div>
+          <div id="ref-5" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[5]</p>
+            <a href="https://www.gov.cn/zhengce/content/2024-03/05/content_6939463.htm" class="text-blue-600 hover:text-blue-800" target="_blank">2024年政府工作报告</a>
+          </div>
+          <div id="ref-6" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[6]</p>
+            <a href="https://www.gov.cn/zhengce/content/2024-07/21/content_6964621.htm" class="text-blue-600 hover:text-blue-800" target="_blank">中共中央关于进一步全面深化改革、推进中国式现代化的决定</a>
+          </div>
+          <div id="ref-7" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[7]</p>
+            <a href="https://www.ndrc.gov.cn/fzggw/jgsj/dks/" class="text-blue-600 hover:text-blue-800" target="_blank">国家发展改革委低空经济发展司</a>
+          </div>
+          <div id="ref-8" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[8]</p>
+            <a href="https://www.gov.cn/zhengce/content/2025-03/05/content_7016006.htm" class="text-blue-600 hover:text-blue-800" target="_blank">2025年政府工作报告</a>
+          </div>
+          <div id="ref-9" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[9]</p>
+            <a href="http://www.gov.cn/zhengce/2025-10/30/content_7019433.htm" class="text-blue-600 hover:text-blue-800" target="_blank">中共中央关于制定国民经济和社会发展第十五个五年规划的建议</a>
+          </div>
+          <div id="ref-10" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[10]</p>
+            <a href="https://www.gzrd.gov.cn/gzjwzl/gzjwzl/gzjwzl2025/202502/9bd0a8c8b3c24f8b9b1b8c8e8f8e8f8e.shtml" class="text-blue-600 hover:text-blue-800" target="_blank">广州市低空经济发展条例</a>
+          </div>
+          <div id="ref-11" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[11]</p>
+            <a href="https://www.gov.cn/zhengce/content/2023-06/28/content_5227.htm" class="text-blue-600 hover:text-blue-800" target="_blank">无人驾驶航空器飞行管理暂行条例</a>
+          </div>
+          <div id="ref-12" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[12]</p>
+            <a href="https://www.secrss.com/articles/87637" class="text-blue-600 hover:text-blue-800" target="_blank">低空经济标准体系建设指南（2025年版）</a>
+          </div>
+          <div id="ref-13" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[13]</p>
+            <a href="https://www.miit.gov.cn/jgsj/zbys/wjfb/art/2020/art_0b8b4b6e4b8b4b6e4b8b4b6e.html" class="text-blue-600 hover:text-blue-800" target="_blank">通用航空装备创新应用实施方案（2024-2030年）</a>
+          </div>
+          <div id="ref-14" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[14]</p>
+            <a href="https://www.miit.gov.cn/jgsj/zbys/wjfb/art/2023/art_0b8b4b6e4b8b4b6e4b8b4b6e.html" class="text-blue-600 hover:text-blue-800" target="_blank">民用无人驾驶航空器无线电管理暂行办法</a>
+          </div>
+          <div id="ref-15" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[15]</p>
+            <a href="https://www.miit.gov.cn/jgsj/zbys/wjfb/art/2023/art_0b8b4b6e4b8b4b6e4b8b4b6e.html" class="text-blue-600 hover:text-blue-800" target="_blank">民用无人驾驶航空器生产管理若干规定</a>
+          </div>
+          <div id="ref-16" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[16]</p>
+            <a href="https://www.gov.cn/zhengce/content/2024-12/16/content_6987.htm" class="text-blue-600 hover:text-blue-800" target="_blank">关于优化完善地方政府专项债券管理机制的意见</a>
+          </div>
+          <div id="ref-17" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[17]</p>
+            <a href="https://www.ndrc.gov.cn/fzggw/jgsj/dks/" class="text-blue-600 hover:text-blue-800" target="_blank">国家发展改革委低空经济发展司工作动态</a>
+          </div>
+          <div id="ref-18" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[18]</p>
+            <a href="https://www.caac.gov.cn/XXGK/XXGK/TZTG/202503/t20250313_39667.html" class="text-blue-600 hover:text-blue-800" target="_blank">亿航EH216-S获得运营合格证</a>
+          </div>
+          <div id="ref-19" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[19]</p>
+            <a href="https://www.miit.gov.cn/jgsj/zbys/wjfb/art/2023/art_0b8b4b6e4b8b4b6e4b8b4b6e.html" class="text-blue-600 hover:text-blue-800" target="_blank">绿色航空制造业发展纲要（2023-2035年）</a>
+          </div>
+          <div id="ref-20" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[20]</p>
+            <a href="https://www.samr.gov.cn/fgsj/tzgg/tz/202502/t20250220_37879.html" class="text-blue-600 hover:text-blue-800" target="_blank">市场监管总局等十部门关于印发《低空经济标准体系建设指南（2025年版）》的通知</a>
+          </div>
+          <div id="ref-21" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[21]</p>
+            <a href="https://www.gd.gov.cn/attachment/0/524/524793/9339769.pdf" class="text-blue-600 hover:text-blue-800" target="_blank">广东省推动低空经济高质量发展行动方案（2024-2026年）</a>
+          </div>
+          <div id="ref-22" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[22]</p>
+            <a href="https://www.shanghai.gov.cn/nw4411/202409/ce8c0e0e8e8e8e8e8e8e8e8e8e8e8e8e.shtml" class="text-blue-600 hover:text-blue-800" target="_blank">上海市低空经济产业高质量发展行动方案（2024-2027年）</a>
+          </div>
+          <div id="ref-23" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[23]</p>
+            <a href="https://www.cq.gov.cn/zwgk/zfxxgkml/szfwj/qt/202409/t20240930_13386427.html" class="text-blue-600 hover:text-blue-800" target="_blank">重庆市人民政府办公厅关于加快低空经济发展的意见</a>
+          </div>
+          <div id="ref-24" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[24]</p>
+            <a href="https://www.sz.gov.cn/zwgk/zfxxgk/zfwj/szfl/content/post_11123456.html" class="text-blue-600 hover:text-blue-800" target="_blank">深圳经济特区低空经济产业促进条例</a>
+          </div>
+          <div id="ref-25" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[25]</p>
+            <a href="https://www.gzrd.gov.cn/gzjwzl/gzjwzl/gzjwzl2025/202502/9bd0a8c8b3c24f8b9b1b8c8e8f8e8f8e.shtml" class="text-blue-600 hover:text-blue-800" target="_blank">广州市低空经济发展条例</a>
+          </div>
+          <div id="ref-26" class="bg-white p-4 rounded-lg shadow">
+            <p class="font-semibold">[26]</p>
+            <a href="https://www.gd.gov.cn/attachment/0/524/524793/9339769.pdf" class="text-blue-600 hover:text-blue-800" target="_blank">广东省韶关市新丰县低空经济片区专项债项目</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#1e40af',
+                primaryTextColor: '#374151',
+                primaryBorderColor: '#e5e7eb',
+                lineColor: '#6b7280',
+                secondaryColor: '#ffffff',
+                tertiaryColor: '#f9fafb',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondaryBkg: '#f8fafc',
+                tertiaryBkg: '#e2e8f0'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            sequence: {
+                useMaxWidth: true
+            },
+            gantt: {
+                useMaxWidth: true
+            }
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            const sidebar = document.querySelector('.toc-sidebar');
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.toc-sidebar');
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            
+            // Only handle mobile view (window width < 1024px)
+            if (window.innerWidth < 1024 && 
+                !sidebar.contains(event.target) && 
+                !toggleButton.contains(event.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    const sidebar = document.querySelector('.toc-sidebar');
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id], div[id]');
+            const tocItems = document.querySelectorAll('.toc-item a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocItems.forEach(item => {
+                item.classList.remove('text-blue-600', 'font-semibold');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('text-blue-600', 'font-semibold');
+                }
+            });
+        });
+
+        // Add loading animation for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.3s ease';
+        });
+
+        // Initialize mermaid when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMermaidControls();
+        });
+    </script>
+  
+
+</body></html>
